@@ -18,3 +18,17 @@ int main()
 }
 
 //Write definition of stat() here 
+void stat(const double p[],int q,double r[]){
+    double max = p[0],min = p[0],sum =0,sqr=0;
+    for(int i=0;i<q;i++){
+        if(p[i]>max) max=p[i];
+        if(p[i]<min) min=p[i];
+        sum += p[i];
+        sqr += pow(p[i],2);
+    }
+    r[0]=sum/q;
+    r[1]=sqrt((sqr/q)-pow(sum/q,2));
+    r[2]=max;
+    r[3]=min;
+    
+}
